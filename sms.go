@@ -41,6 +41,7 @@ type smsParam struct {
 	Timestamp        string `json:"Timestamp"`
 	Action           string `json:"Action"`
 	Version          string `json:"Version"`
+	SignName         string `json:"SignName"`
 	Signature        string `json:"Signature"`
 }
 
@@ -89,6 +90,7 @@ func (sms *Sms) Send(PhoneNumbers, ContentCode, ContentParam string) (*smsRespon
 		PhoneNumbers: PhoneNumbers,
 		ContentCode:  ContentCode,
 		ContentParam: ContentParam,
+		SignName:     "",
 		// ExternalID       string `json:"ExternalId"`
 		RegionID:         "ap-southeast-1",
 		AccessKeyID:      sms.accessKeyID,
