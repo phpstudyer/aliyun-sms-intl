@@ -84,13 +84,13 @@ func New(accessKeyID, accessSercret string) *Sms {
 }
 
 //Send .
-func (sms *Sms) Send(PhoneNumbers, ContentCode, ContentParam string) (*smsResponse, error) {
+func (sms *Sms) Send(PhoneNumbers, ContentCode, ContentParam, SignName string) (*smsResponse, error) {
 	sr := new(smsResponse)
 	param := &smsParam{
 		PhoneNumbers: PhoneNumbers,
 		ContentCode:  ContentCode,
 		ContentParam: ContentParam,
-		SignName:     "",
+		SignName:     SignName,
 		// ExternalID       string `json:"ExternalId"`
 		RegionID:         "ap-southeast-1",
 		AccessKeyID:      sms.accessKeyID,
